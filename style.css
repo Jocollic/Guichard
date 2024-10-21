@@ -2,35 +2,48 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
 header {
-    background: #005f73;
-    color: white;
+    background-color: #333;
+    color: #fff;
     padding: 10px 0;
     text-align: center;
 }
 
-nav a {
-    color: white;
-    padding: 10px;
-    text-decoration: none;
+nav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.hero img {
-    width: 100%;
-    height: auto;
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
 }
 
 main {
     padding: 20px;
+    text-align: center;
+}
+
+.gallery img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
 }
 
 footer {
-    background: #003f47;
-    color: white;
-    text-align: center;
+    background-color: #333;
+    color: #fff;
     padding: 10px 0;
-    position: relative;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
