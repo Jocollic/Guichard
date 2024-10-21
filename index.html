@@ -2,15 +2,16 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O'plaisir du Vin - Accueil</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>O'plaisir du Vin</h1>
+        <div class="logo">
+            <h1>O'plaisir du Vin</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -21,15 +22,34 @@
         </nav>
     </header>
 
-    <main>
-        <h2>Bienvenue chez O'plaisir du Vin</h2>
-        <p>Négociant et grossiste en vins à Pordic et Lantic, nous fournissons les professionnels et les particuliers avec passion.</p>
-        <div class="gallery">
-            <img src="cave.jpg" alt="Photo de notre cave à vin">
-            <img src="camion.jpg" alt="Photo de notre camion de livraison">
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Le vin, notre passion</h2>
+            <p>Négociant et grossiste en vins pour professionnels et particuliers à Pordic et Lantic</p>
+            <a href="catalog.html" class="btn">Découvrir nos vins</a>
         </div>
-        <p>Nous proposons également la location de tireuses à bière pour vos événements tels que mariages, anniversaires, et festivals.</p>
-    </main>
+    </section>
+
+    <section class="gallery">
+        <h2>Nos Services</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="cave.jpg" alt="Photo de notre cave à vin">
+                <h3>Notre Cave</h3>
+                <p>Découvrez une sélection exclusive de vins de qualité.</p>
+            </div>
+            <div class="grid-item">
+                <img src="camion.jpg" alt="Photo de notre camion de livraison">
+                <h3>Notre Livraison</h3>
+                <p>Livraison rapide et efficace pour professionnels et particuliers.</p>
+            </div>
+            <div class="grid-item">
+                <img src="beer-tap.jpg" alt="Photo de tireuse à bière">
+                <h3>Location de Tireuses</h3>
+                <p>Location de tireuses à bière pour vos événements festifs.</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2024 O'plaisir du Vin. Tous droits réservés.</p>
