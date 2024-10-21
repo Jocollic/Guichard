@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nous contacter - O'plaisir du Vin</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <header>
-        <h1>O'plaisir du Vin</h1>
+        <div class="logo">
+            <h1>O'plaisir du Vin</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -26,13 +26,13 @@
         <form action="envoyer.php" method="post">
             <label for="nom">Nom:</label>
             <input type="text" id="nom" name="nom" required><br>
-            
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br>
-            
+
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea><br>
-            
+
             <input type="submit" value="Envoyer">
         </form>
     </main>
