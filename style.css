@@ -1,43 +1,47 @@
-/* Reset des marges et paddings */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Font and global styles */
 body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
 
 /* Header */
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #8a2b06;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-header h1 {
-    font-size: 2.5em;
-    letter-spacing: 2px;
+.logo h1 {
+    color: white;
+    font-size: 1.8em;
 }
 
 nav ul {
     list-style: none;
-    padding: 10px 0;
+    display: flex;
+    gap: 15px;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     font-size: 1.2em;
     transition: color 0.3s ease;
@@ -47,139 +51,109 @@ nav ul li a:hover {
     color: #ffc107;
 }
 
-/* Main content */
-main {
-    padding: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-main h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #8a2b06;
-}
-
-main p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    line-height: 1.8;
-    color: #555;
-}
-
-/* Galerie d'images */
-.gallery {
+/* Hero section */
+.hero {
+    height: 100vh;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.gallery img {
-    width: 45%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer */
-footer {
-    background-color: #8a2b06;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    font-size: 0.9em;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Formulaire de contact */
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    text-align: left;
-}
-
-form label {
-    font-size: 1.1em;
-    color: #8a2b06;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-form input[type="submit"] {
-    background-color: #8a2b06;
+    align-items: center;
     color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
+    text-align: center;
+    padding-top: 80px; /* To account for fixed header */
+}
+
+.hero h2 {
+    font-size: 3em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.hero .btn {
+    padding: 15px 30px;
+    background-color: #ffc107;
+    color: #8a2b06;
+    text-decoration: none;
     font-size: 1.2em;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-form input[type="submit"]:hover {
-    background-color: #ffc107;
+.hero .btn:hover {
+    background-color: #fff;
 }
 
-/* Catalogue */
-section {
-    margin-bottom: 40px;
+/* Gallery section */
+.gallery {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
 }
 
-section h3 {
-    font-size: 1.8em;
+.gallery h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
     color: #8a2b06;
-    margin-bottom: 15px;
 }
 
-ul {
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.grid-item h3 {
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+    color: #8a2b06;
+}
+
+/* Catalog section */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.catalog-grid section h3 {
+    color: #8a2b06;
+}
+
+.catalog-grid ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-ul li {
+.catalog-grid ul li {
     font-size: 1.2em;
-    color: #555;
-    margin-bottom: 8px;
-    transition: color 0.3s ease;
+    padding: 8px 0;
 }
 
-ul li:hover {
-    color: #8a2b06;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .gallery {
-        flex-direction: column;
-    }
-
-    .gallery img {
-        width: 100%;
-    }
+/* Footer */
+footer {
+    background-color: #8a2b06;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
