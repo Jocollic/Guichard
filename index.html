@@ -3,56 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O'plaisir du Vin - Accueil</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>O'plaisir du vin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #8B0000;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .hidden {
+            display: none;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+        .container img {
+            width: 100%;
+            height: auto;
+        }
+        footer {
+            background-color: #8B0000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .content {
+            padding: 20px;
+        }
+        .catalogue {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .catalogue div {
+            text-align: center;
+        }
+        .catalogue img {
+            width: 100px;
+            height: 150px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 300px;
+            margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+        .card p {
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+        function showPage(pageId) {
+            var pages = document.getElementsByClassName('page');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].classList.add('hidden');
+            }
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+    </script>
 </head>
 <body>
+
+    <!-- Header avec des onglets -->
     <header>
-        <div class="logo">
-            <h1>O'plaisir du Vin</h1>
-        </div>
+        <h1>O'plaisir du vin</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">Qui sommes-nous</a></li>
-                <li><a href="catalog.html">Catalogue</a></li>
-                <li><a href="contact.html">Nous contacter</a></li>
+                <li><a onclick="showPage('home')">Accueil</a></li>
+                <li><a onclick="showPage('about')">Qui sommes-nous</a></li>
+                <li><a onclick="showPage('catalogue')">Catalogue</a></li>
+                <li><a onclick="showPage('contact')">Nous contacter</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h2>Le vin, notre passion</h2>
-            <p>Négociant et grossiste en vins pour professionnels et particuliers à Pordic et Lantic</p>
-            <a href="catalog.html" class="btn">Découvrir nos vins</a>
+    <!-- Accueil : Page avec des photos de la cave et du camion -->
+    <div id="home" class="content page">
+        <h2>Bienvenue chez O'plaisir du vin</h2>
+        <p>Découvrez notre cave à vin et notre service de livraison à Pordic et Lantic.</p>
+        <div class="container">
+            <img src="https://via.placeholder.com/300x200" alt="Photo de la cave à vin">
+            <img src="https://via.placeholder.com/300x200" alt="Camion de livraison O'plaisir du vin">
+            <img src="https://via.placeholder.com/300x200" alt="Intérieur de la cave">
         </div>
-    </section>
+    </div>
 
-    <section class="gallery">
-        <h2>Nos Services</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <img src="cave.jpg" alt="Photo de notre cave à vin">
-                <h3>Notre Cave</h3>
-                <p>Découvrez une sélection exclusive de vins de qualité.</p>
+    <!-- Qui sommes-nous : Présentation de l'entreprise -->
+    <div id="about" class="content page hidden">
+        <h2>Qui sommes-nous ?</h2>
+        <p>
+            O'plaisir du vin est un négociant grossiste en vin situé à Pordic (entrepôt) et à Lantic. Nous fournissons des vins 
+            de qualité aussi bien aux professionnels qu'aux particuliers. Spécialisés dans la vente de vins rouges, rosés et blancs, 
+            nous sommes fiers d'offrir un large éventail de produits sélectionnés avec soin.
+        </p>
+        <p>
+            Fondée par Anthony Guichard, notre entreprise met également à disposition des tireuses à bière en location pour vos événements 
+            (mariages, anniversaires, festivals), vous permettant de rendre chaque célébration unique et inoubliable.
+        </p>
+    </div>
+
+    <!-- Catalogue : Liste de vins rouges, rosés et blancs -->
+    <div id="catalogue" class="content page hidden">
+        <h2>Notre Catalogue</h2>
+        <div class="catalogue">
+            <div>
+                <h3>Vins rouges</h3>
+                <img src="https://via.placeholder.com/100x150" alt="Vin rouge">
+                <p>Découvrez notre sélection de vins rouges d'exception.</p>
             </div>
-            <div class="grid-item">
-                <img src="camion.jpg" alt="Photo de notre camion de livraison">
-                <h3>Notre Livraison</h3>
-                <p>Livraison rapide et efficace pour professionnels et particuliers.</p>
+            <div>
+                <h3>Vins rosés</h3>
+                <img src="https://via.placeholder.com/100x150" alt="Vin rosé">
+                <p>Nos rosés frais et légers, parfaits pour l'été.</p>
             </div>
-            <div class="grid-item">
-                <img src="beer-tap.jpg" alt="Photo de tireuse à bière">
-                <h3>Location de Tireuses</h3>
-                <p>Location de tireuses à bière pour vos événements festifs.</p>
+            <div>
+                <h3>Vins blancs</h3>
+                <img src="https://via.placeholder.com/100x150" alt="Vin blanc">
+                <p>Explorez nos vins blancs raffinés et aromatiques.</p>
             </div>
         </div>
-    </section>
+    </div>
 
+    <!-- Contact : Carte de visite fictive -->
+    <div id="contact" class="content page hidden">
+        <h2>Nous contacter</h2>
+        <div class="card">
+            <img src="https://via.placeholder.com/100" alt="Directeur">
+            <h3>Anthony Guichard</h3>
+            <p>Directeur des relations commerciales</p>
+            <p>Téléphone : 02 96 12 34 56</p>
+            <p>Email : anthony.guichard@oplaisirduvin.com</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 O'plaisir du Vin. Tous droits réservés.</p>
+        <p>© 2024 O'plaisir du vin. Tous droits réservés.</p>
     </footer>
+
 </body>
 </html>
